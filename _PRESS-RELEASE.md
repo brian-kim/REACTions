@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Reaction Tester (temp)
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > This is for gamers who want to practice or improve their reaction times to improve at what they play.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > When a professional gamer is unable to play the game they re compete in consistently, their skills will inevitably decline. This is especially detrimental to fps or fighting game pro athletes. This application that I am building is not specifically made for those who play at a high level but also for those who want to improve their gameplay. It can be used as practice to keep player skill, or as training to improve player skill.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > When players are unable to or are too tired to continue practicing or playing their game of interest.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > It solves the problem where a player wants to stay consistent with and improve their reaction times through times they are unable to practice or are too tired to practice normally.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "This can be enjoyed by everyone! From the professional gamer to the bored employee once that 3 o'clock mark hits."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > It takes two easy steps! First, just access the page with our url. Then press play and you're all set!
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "This app helped me maintain my consistency with reacting to certain moves and punishing them when I'm too tired to play!"
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  ## Closing and Call to Action ##
+  > Our application is meant for gamers of all skills levels who want to improve themselves constantly. We will give you the confidence you need to play at the next level.
