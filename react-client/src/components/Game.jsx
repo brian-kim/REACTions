@@ -13,6 +13,7 @@ export default class Game extends React.Component {
       renderedTime: null,
       clickedTime: null,
       reactionTime: null,
+      hasClicked: false,
     }
     this.finalTime = this.finalTime.bind(this);
     this.startGame = this.startGame.bind(this);
@@ -25,7 +26,8 @@ export default class Game extends React.Component {
   startGame() {
     this.setState({
       gameMode: null,
-      reactionTime: null
+      reactionTime: null,
+      hasClicked: false,
     })
     const randomTime = (Math.ceil(Math.random() * 3) + 1) * 1000;
     const startTime = moment();
@@ -38,17 +40,24 @@ export default class Game extends React.Component {
   }
 
   finalTime() {
-    let { renderedTime } = this.state;
-    const clickedTime = moment();
-    let reactionTime;
-    const difference = parseFloat(moment.utc(moment(clickedTime,"DD/MM/YYYY HH:mm:ss").diff(moment(renderedTime,"DD/MM/YYYY HH:mm:ss"))).format("s.SSSS"));
-    if (!isNaN(difference) && difference < 10) {
-      reactionTime = difference * 1000;
+    let { renderedTime, hasClicked } = this.state;
+    let reactionTime, clickedTime;
+    if (!hasClicked) {
+      clickedTime = moment();
+      this.setState({
+        hasClicked: true
+      });
+      const difference = parseFloat(moment.utc(moment(clickedTime,"DD/MM/YYYY HH:mm:ss").diff(moment(renderedTime,"DD/MM/YYYY HH:mm:ss"))).format("s.SSSS"));
+      if (!isNaN(difference) && difference < 10) {
+        reactionTime = difference * 1000;
+      }
+      this.setState({
+        clickedTime,
+        reactionTime
+      }, () => this.submitScore())
+    } else {
+      window.alert('Restart to try again!')
     }
-    this.setState({
-      clickedTime,
-      reactionTime
-    }, () => this.submitScore())
   }
 
   submitScore() {
@@ -68,7 +77,7 @@ export default class Game extends React.Component {
   }
 
   render () {
-    let { gameMode, reactionTime } = this.state;
+    let { gameMode, reactionTime, hasClicked } = this.state;
     let game;
     if (gameMode === 'basic') {
       game = <Basic />
@@ -80,7 +89,7 @@ export default class Game extends React.Component {
           {game}
         </div>
         <div>
-          <ReactionTime reactionTime={reactionTime} pageView={this.props.pageView} startGame={this.startGame} />
+          <ReactionTime reactionTime={reactionTime} hasClicked={hasClicked} pageView={this.props.pageView} startGame={this.startGame} />
         </div>
       </div>
     )
