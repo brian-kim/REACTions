@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/MVP');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/MVP', {useMongoClient: true});
 
 var db = mongoose.connection;
 
@@ -18,4 +19,4 @@ var scoreSchema = mongoose.Schema({
 
 var Score = mongoose.model('Score', scoreSchema);
 
-module.exports = Score
+module.exports = Score;
