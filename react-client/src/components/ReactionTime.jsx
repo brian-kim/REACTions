@@ -1,9 +1,13 @@
 import React from 'react';
 
-const ReactionTime = ({ reactionTime, pageView, startGame }) => {
+const ReactionTime = ({ reactionTime, hasClicked, pageView, startGame }) => {
   let time;
-  if (reactionTime !== null && reactionTime !== undefined) {
-    time = `${reactionTime}ms`
+  if (hasClicked) {
+    if (reactionTime !== null && reactionTime !== undefined) {
+      time = `${reactionTime}ms`;
+    } else {
+      time = 'misfired';
+    }
   }
   return (
     <div>
