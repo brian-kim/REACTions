@@ -11,7 +11,7 @@ A small game made to test your reaction speed.
 
 ## Getting started
   
-  After navigating to the booking module folder, run the following commands:
+  After navigating to the folder, run the following commands:
   ```sh
   npm install
   npm run build
